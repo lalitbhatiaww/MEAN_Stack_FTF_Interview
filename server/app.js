@@ -12,17 +12,11 @@ app.set('view engine', 'jade');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 //Routes
 require('./routes/routes.js')(app);
 
-
-
-//var port = process.env.port||4000;
-//
-//app.listen(port);
-//
 
 /**
  * Get port from environment and store in Express.
@@ -76,7 +70,7 @@ function onError(error) {
 
   var bind = typeof port === 'string'
     ? 'Pipe ' + port
-    : 'Port ' + port
+    : 'Port ' + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
