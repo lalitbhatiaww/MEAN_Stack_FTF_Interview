@@ -1,0 +1,32 @@
+doctype html
+html(ng-app="searchPage")
+html
+  head
+    title Search Page
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet',href='/bower_components_/bootstrap/dist/css/bootstrap.min.css')
+
+  body(ng-controller="searchController")
+    h1 Search page
+    p Welcome to Search Page
+    input(type='text' placeholder="enter search term" ng-model="searchTerm")
+    button(ng-click="sendSearch()" style="margin-left:10px;") search
+    h2 Results:
+
+
+      div
+        ul(ng-repeat="result in searchResults")
+          li
+            b
+              a(href="{{result.link}}" ng-bind="result.title")
+            p
+              span(ng-bind="result.snippet")
+
+  script(src='./bower_components_/angular/angular.min.js', type='text/javascript')
+  script(src='./bower_components_/angular-route/angular-route.min.js', type='text/javascript')
+  script(src="./app/app.js", type="text/javascript")
+  script(src='./bower_components_/jquery/dist/jquery.min.js', type='text/javascript')
+  script(src='./bower_components_/bootstrap/dist/js/bootstrap.min.js', type='text/javascript')
+  //script(src="../../views/tests.js", type="text/javascript")
+  script(src="./app/searchService.js", type="text/javascript")
+  script(src="./app/searchController.js", type="text/javascript")

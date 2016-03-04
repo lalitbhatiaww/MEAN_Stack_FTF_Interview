@@ -1,0 +1,32 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+th,td  {
+    width: 220px;
+    color: darkgreen;
+    padding-left: 20px;
+}
+td {
+    font-size: 15px;
+}
+th {
+    font-size: 20px;
+    font-weight: 900;
+    /*border: groove;*/
+}
+#page-wrap {
+    width: 800px;
+    margin: 0 auto;
+}
+#calculator {
+    width: 350px;
+}
+#calculator > p >span, #calculator > h3 >span {
+    float: right;
+}
