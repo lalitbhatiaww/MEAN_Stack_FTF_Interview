@@ -21,4 +21,22 @@ module.exports = function(app) {
     });
   });
 
+  app.get('/news/nytimes',function(req, res){
+    var host = apiConfig.nytimes.host;
+    var apiPath = apiConfig.nytimes.path + '?api-key=' + apiConfig.nytimes.API_KEY;
+    request.get(host + apiPath, function (err, response) {
+
+      res.send({results: JSON.parse(response.body)});
+    });
+  })
+
+  app.get('/news/guardian',function(req, res){
+    var host = apiConfig.gurdian.host;
+    var apiPath = apiConfig.gurdian.path + '?api-key=' + apiConfig.gurdian.API_KEY;
+    request.get(host + apiPath, function (err, response) {
+
+      res.send({results: JSON.parse(response.body)});
+    });
+  })
+
 };
